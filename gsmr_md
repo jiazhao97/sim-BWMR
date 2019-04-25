@@ -1,0 +1,8 @@
+Note that we implemented GSMR using the "gsmr" package.
+
+reference
+Zhu, Z. et al. (2018) Causal associations between risk factors and common diseases inferred from GWAS summary data. Nat. Commun. 9, 224 
+(https://www.nature.com/articles/s41467-017-02317-2)
+
+"gsmr_md.R" helps to implement GSMR in simulations with LD correlation matrix as identity matrix.
+
