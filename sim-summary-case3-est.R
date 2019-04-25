@@ -1,4 +1,4 @@
-##### Case-3 in summary-level simulations (esimates) #####
+##### Case-3 in summary-level simulations (estimates) #####
 # Figures S10, S11 and S12 in Supplementary Document
 
 
