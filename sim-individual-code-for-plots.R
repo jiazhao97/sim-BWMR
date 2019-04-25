@@ -5,7 +5,7 @@
 # Bottom panel of Figure 1 in Main text,
 # respectively.
 
-setwd("/Users/jiazhao/Desktop/sim-BWMR")
+
 ### Plot
 rm(list = ls())
 
