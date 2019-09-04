@@ -1,6 +1,5 @@
 ##### Case-2 in summary-level simulations (estimates) #####
-# Figures S6, S7 and S8 in Supplementary Document
-
+# Figure S8 in Supplementary Document
 
 rm(list = ls())
 
