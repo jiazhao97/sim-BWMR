@@ -182,7 +182,9 @@ save.image("weights-N20-C01-cortau1.RData")
 rm(list = ls())
 library(ggplot2)
 library(reshape2)
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/weights-reviewer1_Major_comment/weights-N20-C01-cortau1.RData")
+load("weights-N20-C01-cortau1.RData")
+#load("weights-N20-C01-cortau3.RData")
+#load("weights-N20-C01-cortau5.RData")
 
 median_set <- numeric(ncol(w_mat))
 for (i in 1:ncol(w_mat)) {median_set[i] <- summary(w_mat[, i])['Median']}
@@ -212,12 +214,12 @@ plt
 rm(list = ls())
 library(ggplot2)
 library(reshape2)
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/weights-reviewer1_Major_comment/weights-N20-C01-cortau1.RData")
+load("weights-N20-C01-cortau1.RData")
 b_mat <- matrix(nrow = nrow(w_mat), ncol = 3)
 b_mat[,1] <- b_set
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/weights-reviewer1_Major_comment/weights-N20-C01-cortau3.RData")
+load("weights-N20-C01-cortau3.RData")
 b_mat[,2] <- b_set
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/weights-reviewer1_Major_comment/weights-N20-C01-cortau5.RData")
+load("weights-N20-C01-cortau5.RData")
 b_mat[,3] <- b_set
 
 colnames(b_mat) <- seq(1, 5, 2)
