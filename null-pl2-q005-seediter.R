@@ -1,10 +1,3 @@
-##### Individual-level simulations (pleiotropic IV proportion = 20%) #####
-# Vary beta = 0.0, 0.1, 0.2, 0.3, 0.4, 0.5 to get 
-# null-pl2.RData, cau1-pl2.RData, cau2-pl2.RData, 
-# cau3-pl2.RData, cau4-pl2.RData, cau5-pl2.RData, respectively.
-# Top panel of Figure 1 in Main text
-
-
 rm(list = ls())
 
 library(BWMR)
