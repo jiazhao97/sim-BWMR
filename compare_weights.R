@@ -2,7 +2,6 @@
 
 rm(list = ls())
 
-setwd('/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/weights-reviewer1_Major_comment')
 source('func_bayesian_ivw_linearregressionxerror.R')
 source('func_no_weighting.R')
 set.seed(1234)
@@ -41,7 +40,6 @@ save.image('compare_weights.RData')
 #---------------------------------------------------------------------------------
 rm(list = ls())
 
-setwd("/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/weights-reviewer1_Major_comment")
 load('compare_weights.RData')
 library(ggplot2)
 library(reshape2)
