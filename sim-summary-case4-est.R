@@ -210,4 +210,3 @@ plt_boxplot_est <- plt_boxplot_est + facet_grid(~ beta.title) +
   theme(strip.text.x = element_text(size = 15),
         strip.text.y = element_text(size = 15))
 plt_boxplot_est 
-
