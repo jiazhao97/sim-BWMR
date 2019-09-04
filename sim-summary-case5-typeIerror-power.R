@@ -1,6 +1,5 @@
 ##### Case-5 in summary-level simulations (qq-plot, type I error rate, power) ####
-# Figures S19 in Supplementary Document
-
+# Figures S18 in Supplementary Document
 
 rm(list = ls())
 
@@ -158,5 +157,3 @@ my.pvalue.list <- list("GSMR" = pval.gsmr[1, ][pval.gsmr[1, ] > 1e-8], "RAPS" = 
                        "Egger" = pval.egger[1, ][pval.egger[1, ] > 1e-8], "BWMR" = pval.bwmr[1, ][pval.bwmr[1, ] > 1e-8])
 plt_qq <- qqunif.plot(my.pvalue.list, auto.key=list(corner=c(.95,.05)))
 plt_qq
-
-
