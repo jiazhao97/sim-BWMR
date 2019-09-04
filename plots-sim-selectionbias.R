@@ -1,4 +1,5 @@
-### Plot
+# Figure S21 and S22 in supplementary document
+
 rm(list = ls())
 
 library(ggplot2)
@@ -20,19 +21,19 @@ rownames(b.mat) <- samplesize_0
 # i <- 1
 # b.mat[1, ] <- c(b.bwmr.unbias[i, ], b.bwmr.bias[i, ], b.raps.unbias[i, ], b.raps.bias[i, ], 
 #                 b.egger.unbias[i, ], b.egger.bias[i, ], b.gsmr.unbias[i, ], b.gsmr.bias[i, ])
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/sim-BWMR/individual-level/genotype012-new/selectionbias/cau5-noise11-pl2-ss4000.RData")
+load("cau5-noise11-pl2-ss4000.RData")
 i <- 1
 b.mat[1, ] <- c(b.bwmr.unbias[i, ], b.bwmr.bias[i, ], b.raps.unbias[i, ], b.raps.bias[i, ], 
                 b.egger.unbias[i, ], b.egger.bias[i, ], b.gsmr.unbias[i, ], b.gsmr.bias[i, ])
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/sim-BWMR/individual-level/genotype012-new/selectionbias/cau5-noise11-pl2-ss5000.RData")
+load("cau5-noise11-pl2-ss5000.RData")
 i <- 1
 b.mat[2, ] <- c(b.bwmr.unbias[i, ], b.bwmr.bias[i, ], b.raps.unbias[i, ], b.raps.bias[i, ], 
                 b.egger.unbias[i, ], b.egger.bias[i, ], b.gsmr.unbias[i, ], b.gsmr.bias[i, ])
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/sim-BWMR/individual-level/genotype012-new/selectionbias/cau5-noise11-pl2-ss6000.RData")
+load("cau5-noise11-pl2-ss6000.RData")
 i <- 1
 b.mat[3, ] <- c(b.bwmr.unbias[i, ], b.bwmr.bias[i, ], b.raps.unbias[i, ], b.raps.bias[i, ], 
                 b.egger.unbias[i, ], b.egger.bias[i, ], b.gsmr.unbias[i, ], b.gsmr.bias[i, ])
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/sim-BWMR/individual-level/genotype012-new/selectionbias/cau5-noise11-pl2-ss8000.RData")
+load("cau5-noise11-pl2-ss8000.RData")
 i <- 1
 b.mat[4, ] <- c(b.bwmr.unbias[i, ], b.bwmr.bias[i, ], b.raps.unbias[i, ], b.raps.bias[i, ], 
                 b.egger.unbias[i, ], b.egger.bias[i, ], b.gsmr.unbias[i, ], b.gsmr.bias[i, ])
@@ -74,16 +75,16 @@ samplesize_0 <- c("4000", "5000", "6000", "8000")
 # store estimate
 b.mat <- matrix(nrow = length(samplesize_0), ncol = Rp)
 rownames(b.mat) <- samplesize_0
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/sim-BWMR/individual-level/genotype012-new/selectionbias/cau5-noise11-pl2-ss4000.RData")
+load("cau5-noise11-pl2-ss4000.RData")
 i <- 1
 b.mat[1, ] <- b.egger.bias[i, ]
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/sim-BWMR/individual-level/genotype012-new/selectionbias/cau5-noise11-pl2-ss5000.RData")
+load("cau5-noise11-pl2-ss5000.RData")
 i <- 1
 b.mat[2, ] <- b.egger.bias[i, ]
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/sim-BWMR/individual-level/genotype012-new/selectionbias/cau5-noise11-pl2-ss6000.RData")
+load("cau5-noise11-pl2-ss6000.RData")
 i <- 1
 b.mat[3, ] <- b.egger.bias[i, ]
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/sim-BWMR/individual-level/genotype012-new/selectionbias/cau5-noise11-pl2-ss8000.RData")
+load("cau5-noise11-pl2-ss8000.RData")
 i <- 1
 b.mat[4, ] <- b.egger.bias[i, ]
 
@@ -106,4 +107,3 @@ est_plt <- ggplot(est_df, aes(x = samplesize, y = beta_est)) +
   theme(legend.text = element_text(size = 15),
         legend.title = element_text(size = 15, face = "bold"))   
 est_plt
-
