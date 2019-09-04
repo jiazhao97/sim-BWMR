@@ -1,12 +1,5 @@
-##### Code for plots of individual-level simulation results #####
-# Vary "pl2", "pl5", "pl8" to get 
-# Top panel of Figure 1 in Main text,
-# Figure S20 in Supplementary Document,
-# Bottom panel of Figure 1 in Main text,
-# respectively.
+# Figure S25 in supplementary document
 
-
-### Plot
 rm(list = ls())
 
 library(ggplot2)
@@ -15,7 +8,10 @@ library(reshape2)
 method_level <- c("BWMR", "Egger", "GSMR", "RAPS")
 
 ## Type I error
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/simu_sum_heritability/new-try/heritability-04.RData")
+load("heritability-02.RData")
+#load("heritability-03.RData")
+#load("heritability-04.RData")
+
 i <- 1
 Rp <- length(pvalset.bwmr[i, ])
 type.I.error <- c("BWMR" = sum(pvalset.bwmr[i, ] < 0.05)/Rp, "RAPS" = sum(pvalset.raps[i, ] < 0.05)/Rp,
@@ -45,7 +41,7 @@ plt_typeIerror <- ggplot(df_typeIerror, aes(x = Method, y = typeIerror, fill = M
 plt_typeIerror
 
 ### QQplot
-source('/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/qqunifplot.R')
+source('qqunifplot.R')
 my.pvalue.list <- list("GSMR" = pvalset.gsmr[1, ][pvalset.gsmr[1, ] > 1e-30], "RAPS" = pvalset.raps[1, ][pvalset.raps[1, ] > 1e-30],
                        "Egger" = pvalset.egger[1, ][pvalset.egger[1, ] > 1e-30], "BWMR" = pvalset.bwmr[1, ][pvalset.bwmr[1, ] > 1e-30])
 plt_qq <- qqunif.plot(my.pvalue.list, auto.key=list(corner=c(.95,.05)))
@@ -124,5 +120,3 @@ est_plt <- ggplot(est_df, aes(x = Method, y = beta_est)) +
 est_plt <- est_plt + facet_grid( ~ beta) +
   theme(strip.text.x = element_text(size = 20))
 est_plt
-
-
