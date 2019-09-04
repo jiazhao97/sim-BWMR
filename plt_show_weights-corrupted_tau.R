@@ -1,3 +1,5 @@
+# Figure S12 (in the bottom pannel) in supplementary document
+
 rm(list = ls())
 
 library(BWMR)
