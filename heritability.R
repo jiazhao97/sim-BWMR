@@ -1,16 +1,13 @@
 rm(list = ls())
 
 set.seed(1)
-# setwd("/home/jzhaoaz/BWMR_revision_1/heritability")
-setwd("/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/simu_sum_heritability/new-try")
 
 source("simu_sum_func.R")
 source("rnormalmix_func.R")
 library(BWMR)
 library(ggplot2)
 library(TwoSampleMR)
-# source("/home/jzhaoaz/sim-BWMR/gsmr_md.R")
-source("/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/computation_time/gsmr_md.R")
+source("gsmr_md.R")
 
 Rp <- 200
 beta_choice <- c(0.0, 0.1, 0.2, 0.3, 0.4, 0.5)
@@ -31,8 +28,8 @@ for (i in 1:l) {
     dat <- simu_sum(p = 100000, 
                     n1 = 50000, 
                     n2 = 50000, 
-                    h1 = 0.2, 
-                    h2 = 0.2,
+                    h1 = 0.2, # 0.3, 0.4
+                    h2 = 0.2, # 0.3, 0.4
                     neffect1 = 5000, 
                     neffect2 = 5000,
                     beta = beta,
@@ -73,7 +70,10 @@ for (i in 1:l) {
 }
 
 save.image("heritability-02.RData")
-Rp <- length(pvalset.bwmr[i, ])
-type.I.error <- c("BWMR" = sum(pvalset.bwmr[i, ] < 0.05)/Rp, "RAPS" = sum(pvalset.raps[i, ] < 0.05)/Rp,
-                  "GSMR" = sum(pvalset.gsmr[i, ] < 0.05)/Rp, "Egger" = sum(pvalset.egger[i, ] < 0.05)/Rp)
-type.I.error
+# save.image("heritability-03.RData")
+# save.image("heritability-04.RData")
+
+# Rp <- length(pvalset.bwmr[i, ])
+# type.I.error <- c("BWMR" = sum(pvalset.bwmr[i, ] < 0.05)/Rp, "RAPS" = sum(pvalset.raps[i, ] < 0.05)/Rp,
+#                   "GSMR" = sum(pvalset.gsmr[i, ] < 0.05)/Rp, "Egger" = sum(pvalset.egger[i, ] < 0.05)/Rp)
+# type.I.error
