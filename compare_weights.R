@@ -1,3 +1,5 @@
+# Figure S6 in Supplementary Document
+
 rm(list = ls())
 
 setwd('/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/weights-reviewer1_Major_comment')
@@ -63,4 +65,3 @@ plt <- ggplot(df_plt, aes(x = sigma_of_epsilonx, y = beta.est)) +
         legend.title = element_text(size = 15, face = "bold"),
         legend.text = element_text(size = 15))
 plt
-
