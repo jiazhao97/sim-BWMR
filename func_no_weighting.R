@@ -1,3 +1,7 @@
+# Function for implementing the "no weighting" method,
+#  which simply fixs each weight to be one,
+#  on errors-in-variables model
+
 no_weighting <- function(xhat, yhat, sqsigma_X) {
   N <- length(xhat)
   # vem Bayesian_ivw
