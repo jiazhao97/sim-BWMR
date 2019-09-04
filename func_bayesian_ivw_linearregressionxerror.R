@@ -1,3 +1,5 @@
+# Function for implementing Bayesian IVW on errors-in-variables model
+
 bayesian_ivw <- function(xhat, yhat, sqsigma_X) {
   N <- length(xhat)
   # vem Bayesian_ivw
