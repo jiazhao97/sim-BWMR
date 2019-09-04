@@ -1,12 +1,5 @@
-##### Code for plots of individual-level simulation results #####
-# Vary "pl2", "pl5", "pl8" to get 
-# Top panel of Figure 1 in Main text,
-# Figure S20 in Supplementary Document,
-# Bottom panel of Figure 1 in Main text,
-# respectively.
+# Figure S24 in supplementary document
 
-
-### Plot
 rm(list = ls())
 
 library(ggplot2)
@@ -16,7 +9,12 @@ Rp <- 100
 method_level <- c("BWMR", "Egger", "GSMR", "RAPS")
 
 ## Type I error
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/confounderU_simu/new-controlsnr/pl8-seed1-gpu-U-qu04-bu1.RData")
+load("pl8-seed1-gpu-U-qu01-bu1.RData")
+#load("pl8-seed1-gpu-U-qu01-bu05.RData")
+#load("pl8-seed1-gpu-U-qu01-bu2.RData")
+#load("pl8-seed1-gpu-U-qu02-bu1.RData")
+#load("pl8-seed1-gpu-U-qu04-bu1.RData")
+
 i <- 1
 Rp <- length(pval.bwmr.bias[1, ])
 type.I.error <- c("BWMR" = sum(pval.bwmr.unbias[i, ] < 0.05)/Rp, "RAPS" = sum(pval.raps.unbias[i, ] < 0.05)/Rp,
@@ -44,4 +42,3 @@ plt_typeIerror <- ggplot(df_typeIerror, aes(x = Method, y = typeIerror, fill = M
         plot.title = element_text(hjust = 0.5, vjust = 2, size = 30),
         axis.text = element_text(size = 25))
 plt_typeIerror
-
