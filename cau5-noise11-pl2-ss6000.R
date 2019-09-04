@@ -2,7 +2,7 @@ rm(list = ls())
 
 library(BWMR)
 library(TwoSampleMR)
-source("/home/jzhaoaz/sim-BWMR/gsmr_md.R")
+source("gsmr_md.R")
 library(ggplot2)
 
 library(MASS)  # Needed when sample from multivariate normal distribution
@@ -238,4 +238,4 @@ for (i in 1:Rp) {
   }
 }
 
-save.image("/home/jzhaoaz/sim-BWMR/individual-level/genotype012/selectionbias/cau5-noise11-pl2-ss6000.RData")
+save.image("cau5-noise11-pl2-ss6000.RData")
