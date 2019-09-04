@@ -1,6 +1,5 @@
 ##### Case-4 in summary-level simulations (estimates) #####
-# Figures S14 and S15 in Supplementary Document
-
+# Figures S13 and S14 in Supplementary Document
 
 rm(list = ls())
 
