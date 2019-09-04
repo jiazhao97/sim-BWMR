@@ -1,11 +1,5 @@
-##### Code for plots of individual-level simulation results #####
-# Vary "pl2", "pl5", "pl8" to get 
-# Top panel of Figure 1 in Main text,
-# Figure S20 in Supplementary Document,
-# Bottom panel of Figure 1 in Main text,
-# respectively.
+# Figure S23 in supplementary document
 
-### Plot
 rm(list = ls())
 
 library(ggplot2)
@@ -15,7 +9,11 @@ Rp <- 100
 method_level <- c("BWMR", "Egger", "GSMR", "RAPS")
 
 ## Type I error
-load("/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/sample_overlap/null-pl2-q04-seediter.RData")
+load("null-pl2-q005-seediter.RData")
+#load("null-pl2-q01-seediter.RData")
+#load("null-pl2-q02-seediter.RData")
+#load("null-pl2-q03-seediter.RData")
+#load("null-pl2-q04-seediter.RData")
 i <- 1
 Rp <- length(pval.bwmr.bias[1, ])
 type.I.error <- c("BWMR" = sum(pval.bwmr.unbias[i, ] < 0.05)/Rp, "RAPS" = sum(pval.raps.unbias[i, ] < 0.05)/Rp,
