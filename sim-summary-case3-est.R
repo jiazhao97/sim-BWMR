@@ -1,6 +1,5 @@
 ##### Case-3 in summary-level simulations (estimates) #####
-# Figures S10, S11 and S12 in Supplementary Document
-
+# Figures S10 in Supplementary Document
 
 rm(list = ls())
 
@@ -295,6 +294,3 @@ plt_boxplot_est <- plt_boxplot_est + facet_grid(~ beta.title) +
   theme(strip.text.x = element_text(size = 15),
         strip.text.y = element_text(size = 15))
 plt_boxplot_est 
-
-
-
