@@ -1,6 +1,7 @@
+# Figure S19 in supplementary document
+
 rm(list = ls())
 
-setwd("/Users/jiazhao/Documents/HKUST/201809 BWMR/BWMR-bioinformatics/major_revision/code-RData/computation_time")
 library(BWMR)
 library(TwoSampleMR)
 library(MRPRESSO)
@@ -79,12 +80,13 @@ for (i in 1:length(N_choice)) {
 
 a <- ls()
 rm(list=a[which(a!='recordtime_mat_bwmr' & a !='recordtime_mat_raps' & a !='recordtime_mat_gsmr' & a !='recordtime_mat_egger' & a !='recordtime_mat_presso')])
-save.image("computation_time_N.RData")
+save.image("computation_time_simulation.RData")
 
 
 #------------------------------------------
 rm(list = ls())
-load("computation_time_N.RData")
+
+load("computation_time_simulation.RData")
 library(ggplot2)
 library(reshape2)
 df_plot <- data.frame(
@@ -113,7 +115,8 @@ plt
 
 #------------------------------------------
 rm(list = ls())
-load("computation_time_N.RData")
+
+load("computation_time_simulation.RData")
 library(ggplot2)
 library(reshape2)
 df_plot <- data.frame(
@@ -139,4 +142,3 @@ plt <- ggplot(df_plot, aes(x = Nsnps, y = time, fill = Method)) +
         legend.title = element_text(size = 15, face = "bold"),
         legend.text = element_text(size = 15))
 plt
-
